@@ -64,7 +64,7 @@ To change this template use File | Settings | File Templates.
 				<p>恭喜：注册成功！</p>
 				<p>正在进入首页...</p>
 				<script type="text/javascript">
-					setTimeout("location.href='index.html'", 3000);
+					setTimeout("location.href='index.jsp'", 1500);
 				</script>
 			</div>
 		</div>

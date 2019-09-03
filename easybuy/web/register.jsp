@@ -61,7 +61,7 @@ To change this template use File | Settings | File Templates.
 				<li class="current"><em></em>填写注册信息</li>
 				<li class="last"><em></em>注册成功</li>
 			</ul>
-			<form id="regForm" method="post" action="reg-result.html" >
+			<form id="regForm" method="post" action="${pageContext.request.contextPath}/registServlet" >
 				<table>
 					<tr>
 						<td class="field">用户名(*)：</td>
@@ -108,7 +108,7 @@ To change this template use File | Settings | File Templates.
 						<td><input class="text" type="text" name="mobile" /><span></span></td>
 					</tr>
 					<tr>
-						<td class="field">收货地址(*)：</td>
+						<td class="field">家庭地址(*)：</td>
 						<td><input class="text" type="text" name="address" /><span></span></td>
 					</tr>
 					<tr>

@@ -6,6 +6,7 @@ Time: 12:59
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,6 +14,11 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="scripts/function.js"></script>
+	<script type="text/javascript">
+		function refresh() {
+			document.getElementById("safeCode").src = '${pageContext.request.contextPath}/mycode?now=' + new Date();
+		}
+	</script>
 </head>
 <body>
 <div id="header" class="wrap">
@@ -56,7 +62,9 @@ To change this template use File | Settings | File Templates.
 		<em class="corner rt"></em>
 		<div class="box">
 			<h1>欢迎回到易买网</h1>
-			<form id="loginForm" method="post" action="index.html" >
+			<form id="loginForm" method="post" action="${pageContext.request.contextPath}/loginServlet" >
+			<!--<form id="loginForm">-->
+				<center><span id="showinfo" style="color: red;font-size: 16px;">${errorinfo}</span></center>
 				<table>
 					<tr>
 						<td class="field">用户名：</td>
@@ -75,14 +83,14 @@ To change this template use File | Settings | File Templates.
 					<tr>
 					<td class="field">验证码：</td>
 						<td>
-                            <img src="Number.jsp" id="safeCode"/><a id="changeCode" href="#">看不清，换一张</a><br>
-	                        <input type="text" name="code"><div class="mess"></div>
+                            <img src="${pageContext.request.contextPath}/mycode" id="safeCode"/><a id="changeCode" href="javascript:refresh()">看不清，换一张</a><br>
+	                        <input type="text" name="code" id="code" class="text">
 							<span></span>
 						</td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><label class="ui-green"><input type="submit" name="submit" value="立即登录" /></label></td>
+						<td><label class="ui-green"><input type="submit" name="submit" value="立即登录" id="submitBtn" /></label></td>
 					</tr>
 				</table>
 			</form>

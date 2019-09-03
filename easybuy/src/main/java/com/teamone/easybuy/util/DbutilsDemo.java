@@ -20,9 +20,9 @@ public class DbutilsDemo {
         //        System.out.println(user);
 
         // 查询所有
-        String sql = "select * from user";
-        List<User> users = queryRunner.query(sql,new BeanListHandler<User>(User.class));
-        System.out.println(users);
+        String sql = "select * from test";
+        //List<Test> users = queryRunner.query(sql,new BeanListHandler<>(Test.class));
+        //System.out.println(users);
         //System.out.println("ok");
 
         //query:查询
