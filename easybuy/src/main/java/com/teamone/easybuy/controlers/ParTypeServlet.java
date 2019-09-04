@@ -9,13 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/typeServlet")
-public class TypeServlet extends HttpServlet {
+@WebServlet("/perTypeServlet")
+public class ParTypeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     doGet(request,response);
     }
@@ -24,27 +23,13 @@ public class TypeServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         TypeService typeService=new TypeService();
-        List<Type> parTypeList = null;
-        List<Type> childTypeList = null;
         try {
-            parTypeList=typeService.parTypeList();
+            List<Type> parTypeList =typeService.parTypeList();
+            Gson gson=new Gson();
+            String jsonArray=gson.toJson(parTypeList);
+            response.getWriter().println(jsonArray);
         } catch (SQLException e) {
             e.printStackTrace();
         };
-        String[] parList=new String[parTypeList.size()];
-        //String[] childList=new String[childTypeList.size()];
-        for(int i=0;i<parTypeList.size();i++){
-            parList[i]= parTypeList.get(i).getName();
-            //response.getWriter().println(parList[i]);
-        }
-        Gson gson = new Gson();
-        String jsonParList=gson.toJson(parList);
-        response.getWriter().println(jsonParList);
-        HttpSession session=request.getSession();
-        session.setAttribute("list",parList);
-//        for(int j=0;j<childTypeList.size();j++){
-//            childList[j]= childTypeList.get(j).getName();
-//            response.getWriter().println(childList[j]);
-//        }
     }
 }

@@ -17,7 +17,7 @@ To change this template use File | Settings | File Templates.
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript" src="scripts/my.js"></script>
 </head>
-<body>
+<body onload="show()">
 <div id="welcomeImage">
     <img width="100%" height="150" src="images/banner.jpg" alt="welcome">
 </div>
@@ -60,7 +60,7 @@ To change this template use File | Settings | File Templates.
 	<div class="lefter">
 		<div class="box">
 			<h2>商品分类</h2>
-			<dl>
+			<dl id="tpyeLisit">
 				<!--<dt>图书音像</dt>
 				<dd><a href="product-list.jsp">图书</a></dd>
 				<dd><a href="product-list.html">音乐</a></dd>
@@ -79,12 +79,6 @@ To change this template use File | Settings | File Templates.
 				<dd><a href="product-list.html">电脑办公</a></dd>
 				<dd><a href="product-list.html">玩具文具</a></dd>
 				<dd><a href="product-list.html">汽车用品</a></dd>-->
-				<c:forEach var="name" items="${list}">
-					<dt><c:out value="${name}"/><p></dt>
-					<c:forTokens items="google,c,runoob,c,taobao" delims=",c," var="name">
-						<dd><a href="product-list.jsp"><c:out value="${name}"/></a></dd>
-					</c:forTokens>
-				</c:forEach>
 			</dl>
 		</div>
 		<div class="spacer"></div>

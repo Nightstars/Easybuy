@@ -13,19 +13,20 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 <script type="text/javascript" src="../scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../scripts/function.js"></script>
+<script type="text/javascript" src="../scripts/my.js"></script>
 </head>
-<body>
+<body onload="showUser()">
 <div id="header" class="wrap">
 	<div id="logo"><img src="../images/logo.gif" /></div>
-	<div class="help"><a href="../index.html">返回前台页面</a></div>
+	<div class="help"><a href="../index.jsp">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
-			<li><a href="index.html">首页</a></li>
-			<li class="current"><a href="user.html">用户</a></li>
-			<li><a href="product.html">商品</a></li>
-			<li><a href="order.html">订单</a></li>
-			<li><a href="guestbook.html">留言</a></li>
-			<li><a href="news.html">新闻</a></li>
+			<li><a href="index.jsp">首页</a></li>
+			<li class="current"><a href="user.jsp">用户</a></li>
+			<li><a href="product.jsp">商品</a></li>
+			<li><a href="order.jsp">订单</a></li>
+			<li><a href="guestbook.jsp">留言</a></li>
+			<li><a href="news.jsp">新闻</a></li>
 		</ul>
 	</div>
 </div>
@@ -35,30 +36,30 @@ To change this template use File | Settings | File Templates.
 	</div>
 </div>
 <div id="position" class="wrap">
-	您现在的位置：<a href="index.html">易买网</a> &gt; 管理后台
+	您现在的位置：<a href="index.jsp">易买网</a> &gt; 管理后台
 </div>
 <div id="main" class="wrap">
 	<div id="menu-mng" class="lefter">
 		<div class="box">
 			<dl>
 				<dt>用户管理</dt>
-				<dd><a href="user.html">用户管理</a></dd>
+				<dd><a href="user.jsp">用户管理</a></dd>
 			  <dt>商品信息</dt>
-				<dd><em><a href="productClass-add.html">新增</a></em><a href="productClass.html">分类管理</a></dd>
-				<dd><em><a href="product-add.html">新增</a></em><a href="product.html">商品管理</a></dd>
+				<dd><em><a href="productClass-add.jsp">新增</a></em><a href="productClass.jsp">分类管理</a></dd>
+				<dd><em><a href="product-add.jsp">新增</a></em><a href="product.jsp">商品管理</a></dd>
 				<dt>订单管理</dt>
-				<dd><a href="order.html">订单管理</a></dd>
+				<dd><a href="order.jsp">订单管理</a></dd>
 				<dt>留言管理</dt>
-				<dd><a href="guestbook.html">留言管理</a></dd>
+				<dd><a href="guestbook.jsp">留言管理</a></dd>
 				<dt>新闻管理</dt>
-				<dd><em><a href="news-add.html">新增</a></em><a href="news.html">新闻管理</a></dd>
+				<dd><em><a href="news-add.jsp">新增</a></em><a href="news.jsp">新闻管理</a></dd>
 			</dl>
 		</div>
 	</div>
 	<div class="main">
 		<h2>用户管理</h2>
 		<div class="manage">
-			<table class="list">
+			<table class="list" id="user-userList" style="text-align: center">
 				<tr>
 					<th>用户名</th>
 					<th>真实姓名</th>
@@ -66,22 +67,6 @@ To change this template use File | Settings | File Templates.
 					<th>Email</th>
 					<th>手机</th>
 					<th>操作</th>
-				</tr>
-				<tr>
-					<td class="first w4 c">admin</td>
-					<td class="w1 c">张三丰</td>
-					<td class="w2 c">男</td>
-					<td>fengsan.zhang@prd.com</td>
-					<td class="w4 c">13888888888</td>
-					<td class="w1 c"><a href="user-modify.html">修改</a> <a class="manageDel" href="javascript:void(0)">删除</a></td>
-				</tr>
-				<tr>
-					<td class="first w4 c">jack</td>
-					<td class="w1 c">杨二郎</td>
-					<td class="w2 c">男</td>
-					<td>fengsan.zhang@prd.com</td>
-					<td class="w4 c">13888888888</td>
-					<td class="w1 c"><a href="user-modify.html">修改</a> <a class="manageDel" href="javascript:void(0)">删除</a></td>
 				</tr>
 			</table>
 		</div>
