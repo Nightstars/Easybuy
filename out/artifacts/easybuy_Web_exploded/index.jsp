@@ -5,7 +5,9 @@ Date: 2019/9/3
 Time: 12:59
 To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" import="java.util.ArrayList" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,6 +15,7 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="scripts/function.js"></script>
+<script type="text/javascript" src="scripts/my.js"></script>
 </head>
 <body>
 <div id="welcomeImage">
@@ -58,8 +61,8 @@ To change this template use File | Settings | File Templates.
 		<div class="box">
 			<h2>商品分类</h2>
 			<dl>
-				<dt>图书音像</dt>
-				<dd><a href="product-list.html">图书</a></dd>
+				<!--<dt>图书音像</dt>
+				<dd><a href="product-list.jsp">图书</a></dd>
 				<dd><a href="product-list.html">音乐</a></dd>
 				<dt>百货</dt>
 				<dd><a href="product-list.html">运动健康</a></dd>
@@ -75,11 +78,17 @@ To change this template use File | Settings | File Templates.
 				<dd><a href="product-list.html">家电</a></dd>
 				<dd><a href="product-list.html">电脑办公</a></dd>
 				<dd><a href="product-list.html">玩具文具</a></dd>
-				<dd><a href="product-list.html">汽车用品</a></dd>
+				<dd><a href="product-list.html">汽车用品</a></dd>-->
+				<c:forEach var="name" items="${parList}">
+					<dt><c:out value="${name}"/><p></dt>
+					<c:forTokens items="google,c,runoob,c,taobao" delims=",c," var="name">
+						<dd><a href="product-list.jsp"><c:out value="${name}"/></a></dd>
+					</c:forTokens>
+				</c:forEach>
 			</dl>
 		</div>
 		<div class="spacer"></div>
-		<div class="last-view">
+		<div class="last-view" style="height: 100px;">
 			<h2>最近浏览</h2>
 			<dl class="clearfix">
 				<dt><img src="images/product/10_small.jpg" /></dt>
