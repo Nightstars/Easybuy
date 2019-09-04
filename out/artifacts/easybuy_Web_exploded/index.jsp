@@ -79,7 +79,7 @@ To change this template use File | Settings | File Templates.
 				<dd><a href="product-list.html">电脑办公</a></dd>
 				<dd><a href="product-list.html">玩具文具</a></dd>
 				<dd><a href="product-list.html">汽车用品</a></dd>-->
-				<c:forEach var="name" items="${parList}">
+				<c:forEach var="name" items="${list}">
 					<dt><c:out value="${name}"/><p></dt>
 					<c:forTokens items="google,c,runoob,c,taobao" delims=",c," var="name">
 						<dd><a href="product-list.jsp"><c:out value="${name}"/></a></dd>
