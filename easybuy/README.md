@@ -1,2 +1,0 @@
-# Easybuy
-teamone project
