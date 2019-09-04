@@ -1,5 +1,6 @@
 package com.teamone.easybuy.controlers;
 
+import com.google.gson.Gson;
 import com.teamone.easybuy.entities.Type;
 import com.teamone.easybuy.services.TypeService;
 
@@ -19,26 +20,28 @@ public class TypeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         TypeService typeService=new TypeService();
         List<Type> parTypeList = null;
         List<Type> childTypeList = null;
         try {
             parTypeList=typeService.parTypeList();
-            childTypeList=typeService.childTypeList();
         } catch (SQLException e) {
             e.printStackTrace();
         };
         String[] parList=new String[parTypeList.size()];
-        String[] childList=new String[childTypeList.size()];
+        //String[] childList=new String[childTypeList.size()];
         for(int i=0;i<parTypeList.size();i++){
             parList[i]= parTypeList.get(i).getName();
-            response.getWriter().println(parList[i]);
+            //response.getWriter().println(parList[i]);
         }
-        for(int j=0;j<childTypeList.size();j++){
-            childList[j]= (String) childTypeList.get(j).getName();
-        }
-        //request.setAttribute("parList",parList);
-        //request.setAttribute("childList",childList);
-        response.getWriter().println("ok");
+        Gson gson = new Gson();
+        String jsonParList=gson.toJson(parList);
+        response.getWriter().println(jsonParList);
+//        for(int j=0;j<childTypeList.size();j++){
+//            childList[j]= childTypeList.get(j).getName();
+//            response.getWriter().println(childList[j]);
+//        }
     }
 }

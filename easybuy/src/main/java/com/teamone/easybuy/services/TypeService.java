@@ -12,8 +12,8 @@ public class TypeService {
         List<Type> parTypeList=easybuyDao.selectParentType();
         return parTypeList;
     }
-    public List<Type> childTypeList() throws SQLException {
-        List<Type> childTypeList=easybuyDao.selectParentType();
+    public List<Type> childTypeList(int id) throws SQLException {
+        List<Type> childTypeList=easybuyDao.selectChildType(id);
         return childTypeList;
     }
 }
