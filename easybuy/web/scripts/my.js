@@ -16,7 +16,7 @@ function show(){
                   dataType:"json",
                   success:function (result1) {
                      $.each(result1,function (index1,value1) {
-                        $("#tpyeLisit").append("<dd>"+value1.name+"</dd>");
+                        $("#tpyeLisit").append("<dd>"+"<a href="+"product-list.jsp"+">"+value1.name+"</a>"+"</dd>");
                      });
                   }
                });
@@ -59,7 +59,7 @@ function showGoodsType(){
                $("#goodsType").append(
                "<tr> <td class="+"first w4 c"+"align="+"\""+"center"+"\""+">"+value.id+"</td>"
                    +"<td>"+value.name+"</td>"
-                   +"<td class="+"w1 c"+"><a href="+"productClass-modify.html"+">修改</a> <a class="+"manageDel"+ "href="+"javascript:void(0)"+">删除</a></td>"
+                   +"<td class="+"w1 c"+"><a href="+"productClass-modify.jsp"+">修改</a> <a class="+"manageDel"+ "href="+"javascript:void(0)"+">删除</a></td>"
                +"</tr>"
                    );
                $.ajax({
@@ -74,7 +74,7 @@ function showGoodsType(){
                         $("#goodsType").append(
                             "<tr> <td class="+"first w4 c"+">"+value1.id+"</td>"
                             +"<td class="+"childClass"+">"+value1.name+"</td>"
-                            +"<td class="+"w1 c"+"><a href="+"productClass-modify.html"+">修改</a> <a class="+"manageDel"+ "href="+"javascript:void(0)"+">删除</a></td>"
+                            +"<td class="+"w1 c"+"><a href="+"productClass-modify.jsp?name="+value1.name+">修改</a> <a class="+"manageDel"+ "href="+"javascript:void(0)"+">删除</a></td>"
                             +"</tr>"
                      );
                      });
@@ -84,4 +84,18 @@ function showGoodsType(){
          }
       });
    });
+}
+function showParentId() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/perTypeServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#parentId").append("<option value="+value.id+">"+value.name+"</option>");
+                });
+            }
+        });
+    });
 }

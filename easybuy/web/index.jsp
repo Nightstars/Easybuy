@@ -7,7 +7,6 @@ To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" import="java.util.ArrayList" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -61,24 +60,6 @@ To change this template use File | Settings | File Templates.
 		<div class="box">
 			<h2>商品分类</h2>
 			<dl id="tpyeLisit">
-				<!--<dt>图书音像</dt>
-				<dd><a href="product-list.jsp">图书</a></dd>
-				<dd><a href="product-list.html">音乐</a></dd>
-				<dt>百货</dt>
-				<dd><a href="product-list.html">运动健康</a></dd>
-				<dd><a href="product-list.html">服装</a></dd>
-				<dd><a href="product-list.html">家居</a></dd>
-				<dd><a href="product-list.html">美妆</a></dd>
-				<dd><a href="product-list.html">母婴</a></dd>
-				<dd><a href="product-list.html">食品</a></dd>
-				<dd><a href="product-list.html">手机数码</a></dd>
-				<dd><a href="product-list.html">家具首饰</a></dd>
-				<dd><a href="product-list.html">手表饰品</a></dd>
-				<dd><a href="product-list.html">鞋包</a></dd>
-				<dd><a href="product-list.html">家电</a></dd>
-				<dd><a href="product-list.html">电脑办公</a></dd>
-				<dd><a href="product-list.html">玩具文具</a></dd>
-				<dd><a href="product-list.html">汽车用品</a></dd>-->
 			</dl>
 		</div>
 		<div class="spacer"></div>
