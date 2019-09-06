@@ -13,8 +13,9 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 <script type="text/javascript" src="../scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../scripts/function.js"></script>
+<script type="text/javascript" src="../scripts/my.js"></script>
 </head>
-<body>
+<body onload="showParentId_productClass_modify()">
 <div id="header" class="wrap">
 	<div id="logo"><img src="../images/logo.gif" /></div>
 	<div class="help"><a href="../index.jsp">返回前台页面</a></div>
@@ -58,22 +59,21 @@ To change this template use File | Settings | File Templates.
 	<div class="main">
 		<h2>修改分类</h2>
 		<div class="manage">
-			<form action="manage-result.html">
+			<form action="${pageContext.request.contextPath}/modifyServlet">
 				<table class="form">
 					<tr>
 						<td class="field">父分类：</td>
 						<td>
-							<select name="parentId">
+							<select name="parentId" id="parentId_productClass_modify">
 								<option value="0" selected="selected">根栏目</option>
-								<option value="1">电器</option>
-								<option value="2">衣服</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td class="field">分类名称：</td>
-						<td><input type="text" class="text" name="className" value="电脑" /></td>
+						<td><input type="text" class="text" name="className" value=<%=request.getParameter("name")%> /></td>
 					</tr>
+                    <tr hidden><td><input type="text" name="id" value=<%=(String )request.getParameter("id") %>></td></tr>
 					<tr>
 						<td></td>
 						<td><label class="ui-blue"><input type="submit" name="submit" value="更新" /></label></td>

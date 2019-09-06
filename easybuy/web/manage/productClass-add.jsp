@@ -71,7 +71,7 @@ To change this template use File | Settings | File Templates.
 					</tr>
 					<tr>
 						<td class="field">分类名称：</td>
-						<td><input type="text" class="text" name="className" value="${name}" /></td>
+						<td><input type="text" class="text" name="className" value="电脑" /></td>
 					</tr>
 					<tr>
 						<td></td>

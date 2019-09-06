@@ -35,6 +35,11 @@ public class Type {
         this.name=typeName;
         this.pid=pid;
     }
+    public Type(int id,String typeName,int pid){
+        this.id=id;
+        this.name=typeName;
+        this.pid=pid;
+    }
 
     @Override
     public String toString() {

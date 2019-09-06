@@ -21,4 +21,36 @@ public class ProductTypeServices {
             return false;
         }
     }
+    public boolean updateProductType(Type type) throws SQLException {
+        if(type.getPid()==0){
+            if(productTypeDao.updateProductParType(type)>0){
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            if(productTypeDao.updateProductChildType(type)>0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+    public boolean deleteProductType(int id,boolean isPar) throws SQLException {
+        if(isPar){
+                productTypeDao.deleteProductParChildType(id);
+                if(productTypeDao.deleteProductParType(id)>0){
+                    return true;
+                }else {
+                    return false;
+                }
+        }else {
+            System.out.println("child");
+            if(productTypeDao.deleteProductChildType(id)>0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
 }

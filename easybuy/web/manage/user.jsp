@@ -59,7 +59,7 @@ To change this template use File | Settings | File Templates.
 	<div class="main">
 		<h2>用户管理</h2>
 		<div class="manage">
-			<table class="list" id="user-userList" style="text-align: center">
+			<table class="list" id="user-userList">
 				<tr>
 					<th>用户名</th>
 					<th>真实姓名</th>

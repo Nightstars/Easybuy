@@ -119,6 +119,16 @@ public class User {
         this.phone=phone;
         this.address=address;
     }
+    public User(int id, String name, String realname, String passWord, String sex, Date date, String phone, String address) {
+        this.id=id;
+        this.username=name;
+        this.realname=realname;
+        this.password=passWord;
+        this.sex=sex;
+        this.birthday=date;
+        this.phone=phone;
+        this.address=address;
+    }
 
     @Override
     public String toString() {

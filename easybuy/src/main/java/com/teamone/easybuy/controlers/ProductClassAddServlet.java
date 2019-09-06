@@ -27,9 +27,9 @@ public class ProductClassAddServlet extends HttpServlet {
         if("0".equals(parentId)){
             try {
                 if(productTypeServices.addParProductName(type)){
-                    response.sendRedirect("/easybuy//manage/manage-result.jsp");
+                    response.sendRedirect("/easybuy/manage/manage-result.jsp");
                 }else {
-                    response.sendRedirect("/easybuy//manage/productClass-add.jsp");
+                    response.sendRedirect("/easybuy/manage/productClass-add.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -37,9 +37,9 @@ public class ProductClassAddServlet extends HttpServlet {
         }else {
             try {
                 if(productTypeServices.addChildProductName(type)){
-                    response.sendRedirect("/easybuy//manage/manage-result.jsp");
+                    response.sendRedirect("/easybuy/manage/manage-result.jsp");
                 }else {
-                    response.sendRedirect("/easybuy//manage/productClass-add.jsp");
+                    response.sendRedirect("/easybuy/manage/productClass-add.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
