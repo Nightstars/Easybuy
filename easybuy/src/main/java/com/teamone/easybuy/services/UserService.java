@@ -4,8 +4,6 @@ import com.teamone.easybuy.dao.UserDao;
 import com.teamone.easybuy.entities.User;
 
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class UserService {
@@ -34,5 +32,8 @@ public class UserService {
             return false;
         }
     }
-
+    public int getUserId(String name,String password) throws SQLException {
+        User user1=userDao.getIdByNameAndPassword(name,password);
+        return user1.getId();
+    }
 }

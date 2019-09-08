@@ -13,8 +13,9 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 <script type="text/javascript" src="../scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../scripts/function.js"></script>
+<script type="text/javascript" src="../scripts/my.js"></script>
 </head>
-<body>
+<body onload="showgoods_product()">
 <div id="header" class="wrap">
 	<div id="logo"><img src="../images/logo.gif" /></div>
 	<div class="help"><a href="../index.jsp">返回前台页面</a></div>
@@ -58,21 +59,11 @@ To change this template use File | Settings | File Templates.
 	<div class="main">
 		<h2>商品管理</h2>
 		<div class="manage">
-			<table class="list">
+			<table class="list" id="goodsList">
 				<tr>
 					<th>编号</th>
 					<th>商品名称</th>
 					<th>操作</th>
-				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="thumb"><img src="../images/product/0_tiny.gif" /><a href="../product-view.html" target="_self">铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</a></td>
-					<td class="w1 c"><a href="product-modify.html">修改</a> <a class="manageDel" href="javascript:void(0)">删除</a></td>
-				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="thumb"><img src="../images/product/0_tiny.gif" /><a href="../product-view.html" target="_self">铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</a></td>
-					<td class="w1 c"><a href="product-modify.html">修改</a> <a class="manageDel" href="javascript:void(0)">删除</a></td>
 				</tr>
 			</table>
 		</div>

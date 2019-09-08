@@ -82,12 +82,16 @@ To change this template use File | Settings | File Templates.
 </div>
 <div id="news" class="right-main">
 		<h1>&nbsp;</h1>
+		<h1 id="userIdInfo">${id}</h1>
 		<div class="content">
-            <form action="shopping-result.html" method="post">
+            <form action="${pageContext.request.contextPath}/shoppingServlet" method="post">
                 收货地址:<input name="addr" id="addr" type="button"  value="添加新地址" />
                 <span id="span"></span> <br />
                 <input name="address" type="radio" id="address0" checked="checked" /><span>北京海淀区中关村大厦202</span><br />
                 <input name="address" id="address1" type="radio" /><span>河北省邯郸市建设大街54号</span><br />
+				<input type="text" name="id" value=<%=request.getParameter("id")%> />
+				<input type="text" name="price" value=<%=request.getParameter("price")%> />
+				<input type="text" name="userId" value=<%=request.getParameter("userId")%> />
                 <div class="button">  <input type="submit" value="结账" />    </div>
             </form>
 		</div>
@@ -97,7 +101,7 @@ To change this template use File | Settings | File Templates.
 <div class="wrap">
 	<div id="shopping"></div>
 </div>
-<div id="footer">
+<div id="footer" style="margin-top: 200px;">
 	Copyright &copy; 2016 ZR All Rights Reserved. 沪ICP证1000001号
 </div>
 </body>

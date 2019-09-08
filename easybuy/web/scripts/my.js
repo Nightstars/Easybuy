@@ -119,3 +119,61 @@ function showParentId_productClass_modify() {
         });
     });
 }
+function showParentId_productAdd() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/perTypeServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $.ajax({
+                        async:false,
+                        url:"/easybuy/childTypeServlet",
+                        type:"post",
+                        data:"id="+value.id,
+                        dataType:"json",
+                        success:function (result1) {
+                            $.each(result1,function (index1,value1) {
+                                $("#classNameProductAdd").append("<option value="+"\""+value1.id+"\""+">"+value1.name+"</option>");
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    });
+}
+function showgoods_product() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/goodsInfoServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#goodsList").append(
+                        "<tr> <td class="+"\"first w4 c"+"\""+">"+value.id+"" +
+                        "</td> <td class="+"\"thumb"+"\""+"><img src="+"\""+value.imgurl+"\""+"width=\"20\""+"><a href="+"\"../product-view.jsp?name="+value.name+"&img="+value.imgurl+"&price="+value.price+"&num="+value.goodsNum+"&desc="+value.detail+"&id="+value.id+"\" "+"target="+"\"_self"+"\""+">"+value.name+"</a></td>"+
+                        "<td class="+"\"w1 c"+"\""+"><a href="+"\"product-modify.jsp"+"\""+">修改</a> <a class="+"\"manageDel"+"\" "+" "+"onclick="+"\"return window.confirm('这条记录将被删除且不可恢复，确认删除吗？')\""+
+                        " "+"href="+"\"../deleteGoodsServlet?id="+value.id+"\""+">删除</a></td> </tr>"
+                    );
+                });
+            }
+        });
+    });
+}
+function showAddress_address() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/perTypeServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#parentId_productClass_modify").append("<option value="+value.id+">"+value.name+"</option>");
+                });
+            }
+        });
+    });
+}

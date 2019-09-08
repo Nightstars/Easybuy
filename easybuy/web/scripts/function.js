@@ -291,6 +291,14 @@ $(function(){
                 alert("地址不能相同");
                 return;
             }
+            $.ajax({
+                url:"http://localhost:8999/easybuy/addAddressServlet",
+                type:"get",
+                data:"id="+$("#userIdInfo").val()+"&name="+addr,
+                success:function (result) {
+                    alert(result);
+                }
+            });
             $("#span").append('<br/><input name="address" type="radio" id="address0"/><span>'+addr+'</span>');
         }else{
             var span=$("#span").html('<input type="text" name="addAddr" id="addAddr"/>');
@@ -397,7 +405,7 @@ $(function(){
     },3000);
     //欢迎图片
     if(document.referrer==""){
-    	$("#welcomeImage").slideDown(4000).delay(1000).slideUp(4000);
+    	$("#welcomeImage").slideDown(2000).delay(1000).slideUp(2000);
     }
     //订单号验证，只能为数字
     $("#orderForm").submit(function(){

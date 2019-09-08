@@ -1,6 +1,7 @@
 package com.teamone.easybuy.controlers;
 
 import com.teamone.easybuy.services.EasybuyServices;
+import com.teamone.easybuy.services.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,9 +23,12 @@ public class LoginServlet extends HttpServlet {
     String name=request.getParameter("userId");
     String password=request.getParameter("password");
     EasybuyServices easybuyServices=new EasybuyServices();
+    UserService userService=new UserService();
     if(code.equals(myCode)){
         try {
             if(easybuyServices.login(name,password)){
+                session.setAttribute("name",name);
+                session.setAttribute("id",userService.getUserId(name,password));
                 request.getRequestDispatcher("index.jsp").forward(request,response);
             }else {
                 request.setAttribute("errorinfo","用户名或密码错误");

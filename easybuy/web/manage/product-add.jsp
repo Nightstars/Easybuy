@@ -13,8 +13,9 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 <script type="text/javascript" src="../scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../scripts/function.js"></script>
+<script type="text/javascript" src="../scripts/my.js"></script>
 </head>
-<body>
+<body onload="showParentId_productAdd()">
 <div id="header" class="wrap">
 	<div id="logo"><img src="../images/logo.gif" /></div>
 	<div class="help"><a href="../index.jsp">返回前台页面</a></div>
@@ -58,7 +59,7 @@ To change this template use File | Settings | File Templates.
 	<div class="main">
 		<h2>添加商品</h2>
 		<div class="manage">
-			<form id="productAdd" action="manage-result.html">
+			<form id="productAdd"method="post" action="${pageContext.request.contextPath}/productAddServlet" enctype="multipart/form-data">
 				<table class="form">
 					<tr>
 						<td class="field">商品名称(*)：</td>
@@ -71,13 +72,7 @@ To change this template use File | Settings | File Templates.
 					<tr>
 						<td class="field">所属分类：</td>
 						<td>
-							<select name="parentId">
-								<option value="1">电器</option>
-								<option value="3">├ 电器</option>
-								<option value="3">└ 电器</option>
-								<option value="2">衣服</option>
-								<option value="3">├ 电器</option>
-								<option value="3">└ 电器</option>
+							<select name="parentId" id="classNameProductAdd">
 							</select>
 						</td>
 					</tr>					

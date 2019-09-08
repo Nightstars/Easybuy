@@ -17,6 +17,8 @@ To change this template use File | Settings | File Templates.
 <script type="text/javascript" src="scripts/my.js"></script>
 </head>
 <body onload="show()">
+<h1><%=session.getAttribute("name") %></h1>
+<h1>${id}</h1>
 <div id="welcomeImage">
     <img width="100%" height="150" src="images/banner.jpg" alt="welcome">
 </div>

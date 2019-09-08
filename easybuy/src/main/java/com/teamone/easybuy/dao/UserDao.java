@@ -25,6 +25,10 @@ public class UserDao {
         String sql = "select * from user where id=?";
         return queryRunner.query(sql,new BeanHandler<User>(User.class),id);
     }
+    public User getIdByNameAndPassword(String name,String password) throws SQLException {
+        String sql = "select id from user where username=? and password=?";
+        return queryRunner.query(sql,new BeanHandler<User>(User.class),name,DigestUtils.sha256Hex(password));
+    }
     public int updateUser(User user) throws SQLException {
         String sql = "update user set username=?,realname=?,password=?,sex=?,birthday=?,phone=?,address=?  where id=?";
         Object[] parms={user.getUsername(),user.getRealname(), DigestUtils.sha256Hex(user.getPassword()),user.getSex(),user.getBirthday(),user.getPhone(),user.getAddress(),user.getId()};

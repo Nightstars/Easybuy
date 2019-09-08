@@ -80,20 +80,20 @@ To change this template use File | Settings | File Templates.
 		</div>
 	</div>
 	<div id="product" class="main">
-		<h1>利仁2018M福满堂电饼铛 好用实惠</h1>
+		<h1><%=request.getParameter("name")%></h1>
 		<div class="infos">
-			<div class="thumb"><img src="images/product/10.jpg" width="110" height="106" /></div>
+			<div class="thumb"><img src=<%=request.getParameter("img")%> width="110" height="106" /></div>
 			<div class="buy">
-				商城价：<span class="price">￥99.00</span><br />
-				库　存：有货
-			  <div class="button"><input type="button" name="button" value="" onclick="location.href = 'address.html'" /><a href="shopping.html">放入购物车</a></div>
+				商城价：<span class="price">￥<%=request.getParameter("price")%></span><br />
+				库　存：<%=request.getParameter("num")%>
+			  <div class="button"><input type="button" name="button" value="" onclick="location.href = 'address.jsp?id=<%=request.getParameter("id")%>&price=<%=request.getParameter("price")%>&userId=<%=session.getAttribute("id")%>'" /><a href="shopping.jsp">放入购物车</a></div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="introduce">
 			<h2><strong>商品详情</strong></h2>
 			<div class="text">
-				利仁2018M福满堂电饼铛 好用实惠<br />
+				<%=request.getParameter("desc")%><br />
 				......<br />
 			</div>
 		</div>
