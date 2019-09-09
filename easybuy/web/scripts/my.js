@@ -177,3 +177,72 @@ function showAddress_address() {
         });
     });
 }
+function showCart_shopping() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/cartInfoServlet",
+            type:"post",
+            data:"userId="+$("#userId").val(),
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#showCartInfo").append(
+                    "<tr id="+"\"product_id_"+index+"\""+">"+
+                        "<td class="+"\"thumb"+"\""+"><img src="+"\""+value.imgurl+"\""+" "+"width=\"55\""+" /><a href="+"\"product-view.jsp\""+">"+value.name+"</a></td>"+
+                    "<td class="+"\"price"+"\" "+"id="+"\"price_id_"+index+"\""+">"+
+                        "<span>￥"+value.price+"</span>"+
+                    "<input type="+"\"hidden\""+" "+"value="+"\"99\""+" />"+
+                        "</td>"+
+                        "<td class="+"\"number\""+">"+
+                        "<span name="+"\"del\""+">-</span>"+
+                        "<input id="+"\"number_id_"+index+"\""+" type="+"\"text\""+" "+"name="+"\"number\""+" "+"value="+"\"1\""+" />"+
+                        "<span name="+"\"add\""+">+</span>"+
+                        "</td>"+
+                        "<td class="+"\"delete\""+"><a href="+"\"javascript:void(0)\""+">删除</a></td>"+
+                    "</tr>"
+                    );
+                });
+            }
+        });
+    });
+}
+function showGoodsIndex() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/indexShowGoodsServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#showGoodsIndex").append(
+                    "<li><dl>"+
+                    "<dt><a href="+"\"product-view.jsp?name="+value.name+"&img="+value.imgurl+"&price="+value.price+"&num="+value.goodsNum+"&desc="+value.detail+"&id="+value.id+"\" "+"target="+"\"_self\""+"><img src="+value.imgurl+" /></a></dt>"+
+                    "<dd class="+"\"title\""+"><a href="+"\"product-view.jsp?name="+value.name+"&img="+value.imgurl+"&price="+value.price+"&num="+value.goodsNum+"&desc="+value.detail+"&id="+value.id+"\" "+" target="+"\"_self\""+">"+value.name+"</a></dd>"+
+                    "<dd class="+"\"price\""+">"+"￥"+value.price+"</dd>"+
+                    "</dl></li>"
+                    );
+                });
+            }
+        });
+    });
+}
+function showGoodsProductList() {
+    $(function () {
+        $.ajax({
+            url:"/easybuy/indexShowGoodsServlet",
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                $.each(result,function (index,value) {
+                    $("#showGoodsProductList").append(
+                        "<li><dl>"+
+                        "<dt><a href="+"\"product-view.jsp?name="+value.name+"&img="+value.imgurl+"&price="+value.price+"&num="+value.goodsNum+"&desc="+value.detail+"&id="+value.id+"\" "+"target="+"\"_self\""+"><img src="+value.imgurl+" /></a></dt>"+
+                        "<dd class="+"\"title\""+"><a href="+"\"product-view.jsp?name="+value.name+"&img="+value.imgurl+"&price="+value.price+"&num="+value.goodsNum+"&desc="+value.detail+"&id="+value.id+"\" "+" target="+"\"_self\""+">"+value.name+"</a></dd>"+
+                        "<dd class="+"\"price\""+">"+"￥"+value.price+"</dd>"+
+                        "</dl></li>"
+                    );
+                });
+            }
+        });
+    });
+}

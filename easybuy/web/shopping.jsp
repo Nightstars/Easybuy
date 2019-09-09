@@ -13,8 +13,10 @@ To change this template use File | Settings | File Templates.
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="scripts/function.js"></script>
+<script type="text/javascript" src="scripts/my.js"></script>
 </head>
-<body>
+<body onload="showCart_shopping()">
+<input  type="text" id="userId" value="${id}"/>
 <div id="header" class="wrap">
 	<div id="logo"><img src="images/logo.gif" /></div>
 	<div class="help"><a href="shopping.jsp" class="shopping">购物车X件</a><a href="login.jsp">登录</a><a href="register.jsp">注册</a><a href="guestbook.jsp">留言</a><a href="manage/index.jsp">后台管理</a></div>
@@ -56,14 +58,14 @@ To change this template use File | Settings | File Templates.
 <div class="wrap">
 	<div id="shopping">
 		<form action="address.html">
-			<table>
+			<table id="showCartInfo">
 				<tr>
 					<th>商品名称</th>
 					<th>商品价格</th>
 					<th>购买数量</th>
 					<th>操作</th>
 				</tr>
-				<tr id="product_id_0">
+				<%--<tr id="product_id_0">
 					<td class="thumb"><img src="images/product/0.jpg" /><a href="product-view.html">铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</a></td>
 					<td class="price" id="price_id_0">
 						<span>￥99.00</span>
@@ -75,12 +77,12 @@ To change this template use File | Settings | File Templates.
                         <span name="add">+</span>
 					</td>
 					<td class="delete"><a href="javascript:void(0)">删除</a></td>
-				</tr>
+				</tr>--%>
                 <tr id="product_id_1">
                     <td class="thumb"><img src="images/product/0.jpg" /><a href="product-view.html">铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</a></td>
                     <td class="price" id="price_id_1">
                         <span>￥99.00</span>
-                        <input type="hidden" value="99" />
+                        <input type="hidden" value="180" />
                     </td>
                     <td class="number">
                         <span name="del">-</span>
@@ -94,9 +96,9 @@ To change this template use File | Settings | File Templates.
 			<div class="button"><input type="submit" value="" /></div>
 		</form>
 	</div>
-	<script type="text/javascript">
+	<%--<script type="text/javascript">
 		document.write("Cookie中记录的购物车商品ID："+ getCookie("product") + "，可以在动态页面中进行读取");
-	</script>
+	</script>--%>
 </div>
 <div id="footer">
 	Copyright &copy; 2016 ZR All Rights Reserved. 沪ICP证1000001号

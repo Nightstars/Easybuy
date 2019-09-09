@@ -86,7 +86,7 @@ To change this template use File | Settings | File Templates.
 			<div class="buy">
 				商城价：<span class="price">￥<%=request.getParameter("price")%></span><br />
 				库　存：<%=request.getParameter("num")%>
-			  <div class="button"><input type="button" name="button" value="" onclick="location.href = 'address.jsp?id=<%=request.getParameter("id")%>&price=<%=request.getParameter("price")%>&userId=<%=session.getAttribute("id")%>'" /><a href="shopping.jsp">放入购物车</a></div>
+			  <div class="button"><input type="button" name="button" value="" onclick="location.href = 'address.jsp?id=<%=request.getParameter("id")%>&price=<%=request.getParameter("price")%>&userId=<%=session.getAttribute("id")%>'" /><a href="${pageContext.request.contextPath}/addCartServlet?goodsId=<%=request.getParameter("id")%>&userId=<%=session.getAttribute("id")%>">放入购物车</a></div>
 			</div>
 			<div class="clear"></div>
 		</div>

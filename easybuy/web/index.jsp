@@ -16,7 +16,7 @@ To change this template use File | Settings | File Templates.
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript" src="scripts/my.js"></script>
 </head>
-<body onload="show()">
+<body onload="show();showGoodsIndex()">
 <h1><%=session.getAttribute("name") %></h1>
 <h1>${id}</h1>
 <div id="welcomeImage">
@@ -86,14 +86,12 @@ To change this template use File | Settings | File Templates.
                 </ul>
             </div>
 			<h2>商品列表</h2>
-			<ul class="product clearfix">
-				<li>
-					<dl>
+			<ul class="product clearfix" id="showGoodsIndex">
+				<li><dl>
 						<dt><a href="product-view.html"  target="_self"><img src="images/product/1.jpg" /></a></dt>
 						<dd class="title"><a href="product-view.html" target="_self">法国德菲丝松露精品巧克力500g/盒</a></dd>
 						<dd class="price">￥108.0</dd>
-					</dl>
-				</li>
+				</dl></li>
 				<li>
 					<dl>
 						<dt><a href="product-view.html"  target="_self"><img src="images/product/2.jpg" /></a></dt>

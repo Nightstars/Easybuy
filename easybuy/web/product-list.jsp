@@ -15,7 +15,7 @@ To change this template use File | Settings | File Templates.
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript" src="scripts/my.js"></script>
 </head>
-<body onload="show()">
+<body onload="show();showGoodsProductList()">
 <div id="header" class="wrap">
 	<div id="logo"><img src="images/logo.gif" /></div>
 	<div class="help"><a href="shopping.jsp" class="shopping">购物车X件</a><a href="login.jsp">登录</a><a href="register.jsp">注册</a><a href="guestbook.jsp">留言</a><a href="manage/index.jsp">后台管理</a></div>
@@ -69,16 +69,16 @@ To change this template use File | Settings | File Templates.
 				<dt>&nbsp;</dt>
 				<dd>&nbsp;</dd>
 		  </dl>
-			<script type="text/javascript">
+			<%--<script type="text/javascript">
 				document.write("Cookie中记录的购物车商品ID："+ getCookie("product") + "，可以在动态页面中进行读取");
-			</script>
+			</script>--%>
 		</div>
 	</div>
 	<div class="main">
 		<div class="product-list">
 			<h2>全部商品</h2>			
 			<div class="clear"></div>
-			<ul class="product clearfix">
+			<ul class="product clearfix" id="showGoodsProductList">
 				<li>
 					<dl>
 						<dt><a href="product-view.html" target="_self"><img src="images/product/1.jpg" /></a></dt>
