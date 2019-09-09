@@ -36,7 +36,8 @@ public class ProductAddServlet extends HttpServlet {
         String uuid=UUID.randomUUID().toString().replaceAll("-","");
         String type=part.getSubmittedFileName().substring(part.getSubmittedFileName().lastIndexOf("."));
         String path="/media/";
-        part.write("d:/myimg/"+uuid+type);
+        //part.write("d:/myimg/"+uuid+type);
+        part.write(path+uuid+type);
         GoodsService goodsService=new GoodsService();
         Goods goods=new Goods(name,productDetail,Double.parseDouble(productPrice),Integer.parseInt(productNumber),"http://45.89.229.247:8080/img/"+uuid+type,Integer.parseInt(parentId));
         try {
